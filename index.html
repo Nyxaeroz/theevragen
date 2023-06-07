@@ -1,0 +1,331 @@
+<!-- project based a w3schools template: https://www.w3schools.com/css/css_rwd_templates.asp -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Theevragen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- local stylesheets and assets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="res/png" href="/res/favicon.png">
+</head>
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+      <a  href="javascript:void(0);"
+          class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" 
+          onclick="toggleFunction()" title="Toggle Navigation Menu">
+          <i class="fa fa-bars"></i></a>
+      <a  id="nav-theevraag" 
+          onclick="smooth_scroll('#vraag')"
+          class="w3-bar-item w3-button">
+          THEEVRAAG</a>
+      <a  id="nav-over"
+          onclick="smooth_scroll('#over')"
+          class="w3-bar-item w3-button w3-hide-small">
+          OVER</a>
+      <!-- <a id="nav-thijsoid"  onclick="smooth_scroll('#thijsoid')" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-external-link"></i> THIJSOID</a> -->
+      <a  id="nav-thijsoid"
+          href="https://nyxaeroz.github.io/thijsoid.space/"
+          target="_blank" 
+          class="w3-bar-item w3-button w3-hide-small">
+          THIJSOID <i class="fa fa-external-link"></i></a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+      <a  class="w3-bar-item w3-button" 
+          onclick="toggleFunction(); smooth_scroll('#over');">
+          OVER</a>
+      <a  href="https://nyxaeroz.github.io/thijsoid.space/"
+          target="_blank"  
+          class="w3-bar-item w3-button" 
+          onclick="toggleFunction(); smooth_scroll('#thijsoid');">
+          THIJSOID <i class="fa fa-external-link"></i></a>
+    </div>
+  </div>
+
+  <!-- Theevraag container -->
+  <div class="bgimg-1 w3-display-container w3-opacity-min" id="vraag">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+      <span id="theevraag-header" class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+        THEEVRAAG
+      </span>
+      <br>
+      <img id="img-theevraag" src="res/vragen/1.png" class="w3-center w3-image w3-padding-large"
+        alt="Oeps, hier had de theevraag moeten staan!">
+    </div>
+  </div>
+
+  <!-- Over container -->
+  <div class="w3-content w3-container w3-padding-64" id="over">
+    <h3 class="w3-center">THEEVRAAG VAN VANDAAG</h3>
+    <p class="w3-center"><em>Elke dag een nieuwe vraag</em></p>
+    <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem
+      ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa
+      qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat.</p>
+    <h3 id="countdown" class="w3-center w3-padding-large w3-black w3-animate-opacity">My Name</h3>
+    <div class="w3-row">
+      <div class="w3-col m6 w3-center w3-padding-large">
+        <img src="res/vragen/1.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me"
+          width="500" height="333">
+      </div>
+
+      <!-- Hide this text on small devices -->
+      <div class="w3-col m6 w3-hide-small w3-padding-large">
+        <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
+          elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+    <!-- <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
+  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+  </div> -->
+  </div>
+
+  <!-- Second Parallax Image with Portfolio Text -->
+  <!-- <div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">
+        WAUW
+        <span class="w3-hide-small">KIJK DIT FANCY BEWEGEN DAN</span>
+      </span>
+    </div>
+  </div> -->
+
+  <!-- Container (Portfolio Section) -->
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <!-- <div class="w3-content w3-container w3-padding-64" id="thijsoid">
+    <h3 class="w3-center">MY WORK</h3>
+    <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them
+        bigger</em></p><br>
+
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col w3-third">
+        <img src="res/vragen/1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="The mist over the mountains">
+      </div>
+
+      <div class="w3-col w3-third">
+        <img src="res/vragen/2.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="Coffee beans">
+      </div>
+
+      <div class="w3-col w3-third">
+        <img src="res/vragen/3.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="Bear closeup">
+      </div>
+
+
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col w3-third">
+        <a href="https://nyxaeroz.github.io/thijsoid.space/">test1</a>
+      </div>
+
+      <div class="w3-col w3-third">
+        <a href="https://nyxaeroz.github.io/thijsoid.space/">test2</a>
+      </div>
+
+      <div class="w3-col w3-third">
+        <a href="https://nyxaeroz.github.io/thijsoid.space/">test3</a>
+      </div>
+
+    </div>
+  </div> -->
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i
+        class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large" width="500%"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center my_yellow w3-padding-16">
+    <a  id="to_top" 
+        onclick="smooth_scroll('#vraag')" 
+        class="w3-button w3-light-grey">
+        <i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i> -->
+      <!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
+      <!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
+      <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
+      <!-- <i class="fa fa-twitter w3-hover-opacity"></i> -->
+      <a href="https://github.com/Nyxaeroz" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+      <a href="https://www.linkedin.com/in/thijsvanloenhout/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    </div>
+    <p>Powered by a lot of tea</p>
+  </footer>
+
+  <script>
+    // number of theevragen in each category
+    nr_wat = 38;
+    nr_welk = 38;
+    nr_wie = 13;
+    nr_waar = 12;
+    nr_hoe = 11;
+    nr_misc = 8;
+    nr_wanneer = 5;
+    nr_waarom = 1;
+    nr_total = nr_wat + nr_wie + nr_welk + nr_wanneer + nr_waarom + nr_waar + nr_hoe + nr_misc;
+
+    var day = new Date().getUTCMinutes();
+
+    function sfc32(a, b, c, d) {
+      return function () {
+        a >>>= 0; b >>>= 0; c >>>= 0; d >>>= 0;
+        var t = (a + b) | 0;
+        a = b ^ b >>> 9;
+        b = c + (c << 3) | 0;
+        c = (c << 21 | c >>> 11);
+        d = d + 1 | 0;
+        t = t + d | 0;
+        c = c + t | 0;
+        return (t >>> 0) / 4294967296;
+      }
+    }
+
+    function get_random_id(seed) {
+
+      // seeded PRNG from https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript
+      var seed = seed ^ 0xDEADBEEF;
+      // Pad seed with Phi, Pi and E ( https://en.wikipedia.org/wiki/Nothing-up-my-sleeve_number )
+      var rand = sfc32(0x9E3779B9, 0x243F6A88, 0xB7E15162, seed);
+      // advance generator to mix the initial state
+      for (var i = 0; i < 15; i++) rand();
+
+      // generate random number between 1 (included) and total (included)
+      var r = Math.floor(rand() * nr_total) + 1;
+
+      // create id based on random number r
+      if (r <= nr_wat) { return "wat" + r; } else { r -= nr_wat; }
+      if (r <= nr_welk) { return "welk" + r; } else { r -= nr_welk; }
+      if (r <= nr_wie) { return "wie" + r; } else { r -= nr_wie; }
+      if (r <= nr_waar) { return "waar" + r; } else { r -= nr_waar; }
+      if (r <= nr_hoe) { return "hoe" + r; } else { r -= nr_hoe; }
+      if (r <= nr_misc) { return "misc" + r; } else { r -= nr_misc; }
+      if (r <= nr_wanneer) { return "misc" + r; } else { r -= nr_wanneer; }
+      if (r <= nr_waarom) { return "misc" + r; } else { r -= nr_waarom; }
+      // return 'default' theevraag when an error occurs
+      return "welk23"
+
+    }
+
+    // Change theevraag based on timestamp and scale it properly
+    function update_vraag(id) {
+      var imgvraag = document.getElementById("img-theevraag");
+      var path = "res/vragen/" + id + ".png";
+      console.log(path);
+      imgvraag.setAttribute("src", path);
+
+      // Match theevraag's width with question block
+      var t = document.getElementById("theevraag-header");
+      var w = t.offsetWidth;
+      imgvraag.setAttribute("width", w);
+    }
+
+    // every so often, check if we need to update the theevraag
+    // see https://stackoverflow.com/questions/13304471/javascript-get-code-to-run-every-minute
+    update_vraag(get_random_id(day));
+    setInterval(function () {
+      var seed = new Date().getUTCMinutes();
+      if (seed != day) {
+        var id = get_random_id(seed);
+        update_vraag(id);
+        day = seed;
+      }
+    }, 15 * 1000);
+
+    // countdown to next day
+    // https://stackoverflow.com/questions/39724855/countdown-to-tomorrow-date-in-javascript
+    // https://stackoverflow.com/questions/41196556/use-current-time-and-count-down-to-hour-and-reset-to-next-hour-countdown
+    function show_time() {
+      var now = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+      var hrs = (12 + 23 - now.getHours()) % 24;
+      var mins = 60 - now.getMinutes();
+      var secs = 60 - now.getSeconds();
+      timeLeft = "" + hrs + 'h ' + mins + 'm ' + secs + 's';
+      document.getElementById("countdown").innerText = timeLeft;
+    }
+    show_time();
+    setInterval(show_time, 1000);
+
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+
+    // smooth scrolling to element
+    function smooth_scroll(id){
+        document.querySelector(id).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    // Change style of navbar on scroll
+    window.onscroll = function () { myFunction() };
+    function myFunction() {
+      var navbar = document.getElementById("myNavbar");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+      } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+      }
+    }
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
