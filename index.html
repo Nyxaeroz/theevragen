@@ -214,7 +214,18 @@
     nr_waarom = 1;
     nr_total = nr_wat + nr_wie + nr_welk + nr_wanneer + nr_waarom + nr_waar + nr_hoe + nr_misc;
 
-    var day = new Date().getUTCMinutes();
+    // UTC hour in the day to switch to a new theevraag 
+    var hour_to_switch = 12;
+
+    // get day accounting for hour_to_switch
+    function get_day(hour_to_switch) {
+      var day = new Date().getUTCDay();
+      // get LOCAL hour of day 
+      var hrs = new Date().getHours();
+      // account for hour_to_switch by incrementing (mod nr of days in the week) day by 1 if necessary
+      return hrs < hour_to_switch ? day : (day + 1) % 7;
+    }
+    var day = get_day(hour_to_switch);
 
     function sfc32(a, b, c, d) {
       return function () {
@@ -230,6 +241,7 @@
       }
     }
 
+    // produce a random theevraag id ([category]_[nr]) given a seed 
     function get_random_id(seed) {
 
       // seeded PRNG from https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript
@@ -256,7 +268,7 @@
 
     }
 
-    // Change theevraag based on timestamp and scale it properly
+    // Change theevraag and scale it properly
     function update_vraag(id) {
       var imgvraag = document.getElementById("img-theevraag");
       var path = "res/vragen/" + id + ".png";
@@ -273,7 +285,7 @@
     // see https://stackoverflow.com/questions/13304471/javascript-get-code-to-run-every-minute
     update_vraag(get_random_id(day));
     setInterval(function () {
-      var seed = new Date().getUTCMinutes();
+      var seed = get_day(hour_to_switch);
       if (seed != day) {
         var id = get_random_id(seed);
         update_vraag(id);
@@ -286,7 +298,7 @@
     // https://stackoverflow.com/questions/41196556/use-current-time-and-count-down-to-hour-and-reset-to-next-hour-countdown
     function show_time() {
       var now = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
-      var hrs = (12 + 23 - now.getHours()) % 24;
+      var hrs = (hour_to_switch + 23 - now.getHours()) % 24;
       var mins = 60 - now.getMinutes();
       var secs = 60 - now.getSeconds();
       timeLeft = "" + hrs + 'h ' + mins + 'm ' + secs + 's';
