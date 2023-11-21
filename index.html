@@ -42,6 +42,16 @@
           target="_blank" 
           class="w3-bar-item w3-button w3-hide-small">
           THIJSOID <i class="fa fa-external-link"></i></a>
+
+      <a  id="toggle-lang-dutch" 
+          onclick="change_lang('dutch')"
+          class="w3-bar-item w3-button w3-right">
+          NL</a>
+
+      <a  id="toggle-lang-eng" 
+          onclick="change_lang('english')"
+          class="w3-bar-item w3-button w3-right">
+          EN</a>
     </div>
 
     <!-- Navbar on small screens -->
@@ -71,9 +81,9 @@
 
   <!-- Over container -->
   <div class="w3-content w3-container w3-padding-64" id="over">
-    <h3 class="w3-center">THEEVRAAG VAN VANDAAG</h3>
-    <p class="w3-center"><em>Reflecteren, theetje bij theetje</em></p>
-    <p>
+    <h3 class="w3-center" id="over-header">THEEVRAAG VAN VANDAAG</h3>
+    <p class="w3-center" id="over-tagline"><em>Reflecteren, theetje bij theetje</em></p>
+    <p id="over-text">
 
       <b>Waar drink jij het liefst een kop thee?</b> Zie foto.
 
@@ -138,6 +148,9 @@
   </footer>
 
   <script>
+    // default language of the site
+    cur_lang = 'dutch';
+
     // number of theevragen in each category
     nr_wat = 38;
     nr_welk = 38;
@@ -277,6 +290,37 @@
         x.className = x.className.replace(" w3-show", "");
       }
     }
+  
+    function change_lang(new_lang) {
+      console.log("changing language to", new_lang);
+      if (new_lang == cur_lang) return;
+
+      cur_lang = new_lang;
+      console.log(new_lang);
+      if (cur_lang == 'dutch') {
+        document.getElementById("nav-theevraag").textContent = "THEEVRAAG";
+        document.getElementById("nav-over").textContent = "OVER";
+        document.getElementById("nav-thijsoid").textContent = "THIJSOID";
+      
+        document.getElementById("theevraag-header").textContent = "THEEVRAAG";
+        
+        document.getElementById("over-header").textContent = "THEEVRAAG VAN VANDAAG";
+        document.getElementById("over-tagline").textContent = "Reflecteren, theetje bij theetje";
+      }
+      else if (cur_lang == 'english') {
+        document.getElementById("nav-theevraag").textContent = "TEAQUESTION";
+        document.getElementById("nav-over").textContent = "ABOUT";
+        document.getElementById("nav-thijsoid").textContent = "THIJSOID";
+      
+        document.getElementById("theevraag-header").textContent = "TEA QUESTION";
+        
+        document.getElementById("over-header").textContent = "TODAY'S TEA QUESTION";
+        document.getElementById("over-tagline").textContent = "Reflecting, one cup at a time";
+     
+      }
+
+    }
+  
   </script>
 
 </body>
